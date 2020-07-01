@@ -11,7 +11,7 @@
 // var botRight = document.getElementById('div9');
 
 var turnLog = {};
-var lastSquare = '';
+var turnArray = [];
 
 
 var clicker = function (section) {
@@ -19,23 +19,20 @@ var clicker = function (section) {
   // console.log(section.getElementById('div1'))
 
   var currentSquare = section.id;
-  lastSquare = currentSquare;
-  var xO = section.innerHTML;
   if (!turnLog.hasOwnProperty(currentSquare)) {
-      if (turnLog[lastSquare] === 'O' || turnLog[lastSquare] === undefined) {
-        section.innerHTML = 'X'
-        turnLog[lastSquare] = 'X';
-
-        console.log('IN O: ', turnLog)
-      } else {
-        section.innerHTML = 'O'
-        turnLog[lastSquare] = 'O';
-        console.log('IN O: ', turnLog)
-      }
+    turnLog[currentSquare] = currentSquare;
+    var lastTurn = turnArray.pop()
+    if (lastTurn === 'O' || lastTurn === undefined) {
+      section.innerHTML = '<p>X</p>';
+      turnArray.push('X');
     } else {
-      alert('choose another spot!')
+      section.innerHTML = '<p>O</p>';
+      turnArray.push('O');
     }
-    // section.setAttribute('id', `${section.getAttribute('id')} inactive`);
+  } else {
+    alert('choose another spot!')
+  }
+  // section.setAttribute('id', `${section.getAttribute('id')} inactive`);
   // // section.innerHTML = `<img src=${'./assets/o-transparent.png'} width='12%' height='25%'></img>`
 
 }
