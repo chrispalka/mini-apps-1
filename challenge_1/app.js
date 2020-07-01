@@ -1,2 +1,42 @@
+// grab all divs individually
 
+// var topLeft = document.getElementById('div1');
+// var topMid = document.getElementById('div2');
+// var topRight = document.getElementById('div3');
+// var midLeft = document.getElementById('div4');
+// var midMid = document.getElementById('div5');
+// var midRight = document.getElementById('div6');
+// var botLeft = document.getElementById('div7');
+// var botMid = document.getElementById('div8');
+// var botRight = document.getElementById('div9');
+
+var turnLog = {};
+var lastSquare = '';
+
+
+var clicker = function (section) {
+  // section.innerHTML = `<img src=${'./assets/o-transparent.png'} width='12%' height='25%'></img>`
+  // console.log(section.getElementById('div1'))
+
+  var currentSquare = section.id;
+  lastSquare = currentSquare;
+  var xO = section.innerHTML;
+  if (!turnLog.hasOwnProperty(currentSquare)) {
+      if (turnLog[lastSquare] === 'O' || turnLog[lastSquare] === undefined) {
+        section.innerHTML = 'X'
+        turnLog[lastSquare] = 'X';
+
+        console.log('IN O: ', turnLog)
+      } else {
+        section.innerHTML = 'O'
+        turnLog[lastSquare] = 'O';
+        console.log('IN O: ', turnLog)
+      }
+    } else {
+      alert('choose another spot!')
+    }
+    // section.setAttribute('id', `${section.getAttribute('id')} inactive`);
+  // // section.innerHTML = `<img src=${'./assets/o-transparent.png'} width='12%' height='25%'></img>`
+
+}
 
