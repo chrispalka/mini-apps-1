@@ -16,20 +16,20 @@ body {
 
 
 .grid {
-  margin-top: 250px;
+  margin-top: 20%;
   display: grid;
   grid-template-columns: auto auto auto;
   display: inline-grid;
   width: 35%;
 }
 
-.grid > div {
-  
+.grid > p {
+  display: inline-block;
 }
 
 .top {
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
   border-bottom: 2px solid black;
   /* margin: 5px; */
   height: 150px;
@@ -42,7 +42,7 @@ body {
 }
 .mid {
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
   border-bottom: 2px solid black;
   /* margin: 5px; */
   height: 150px;
@@ -55,7 +55,7 @@ body {
 }
 .bot {
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
   /* margin: 5px; */
   height: 150px;
   background: transparent;
