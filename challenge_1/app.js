@@ -72,9 +72,8 @@ var clicker = function (section) {
 
 function solutionChecker() {
   var solutionCompiler = [];
-  // if (!solutionCompiler.includes(undefined)) {
-    //   console.log('tie')
-    // }
+  var winnerBox = document.getElementById('winner-box');
+  var newGameButton = document.getElementById('new-game-button');
     for (var i = 0; i < solutionArray.length; i++) {
       var solutions = solutionArray[i];
       for (var s = 0; s < solutions.length; s++) {
@@ -84,20 +83,17 @@ function solutionChecker() {
     var sliced = solutionSlicer(solutionCompiler)
     for (var x = 0; x < sliced.length; x++) {
       if (sliced[x].join('') === 'XXX') {
-        alert('X WINS!!');
-        clearGame();
+        winnerBox.innerHTML = `<h1>Player X Wins!</h1>`;
+        newGameButton.style.display = 'inline'
         return;
       } else if (sliced[x].join('') === 'OOO') {
-        alert('O WINS!!');
-        clearGame();
+        winnerBox.innerHTML = `<h1>Player O Wins!</h1>`;
         return;
       }
     }
     if (!solutionCompiler.includes(undefined)) {
-      alert('tie');
-      clearGame();
+      winnerBox.innerHTML = `<h1>Tie!</h1>`;
     }
-
 }
 
 
@@ -118,4 +114,6 @@ function clearGame() {
   });
   turnLog = {}
   turnArray = [];
+  document.getElementById('winner-box').innerHTML = ''
+  document.getElementById('new-game-button').style.display = 'none';
 }

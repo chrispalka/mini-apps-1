@@ -1,5 +1,6 @@
 body {
   background: gray;
+  font-family: sans-serif;
 }
 .container {
   text-align: center;
@@ -13,18 +14,38 @@ body {
   /* background-repeat: no-repeat; */
 }
 
+.score {
+  margin-top: 5%;
+}
 
+.score button {
+  display: none;
+
+}
+
+.winner {
+  margin-top: 15%;
+}
+.winner > h1 {
+  margin-bottom: 0%;
+  color: red;
+}
 
 .grid {
-  margin-top: 20%;
+  text-align: center;
+  margin-top: 5%;
   display: grid;
   grid-template-columns: auto auto auto;
   display: inline-grid;
   width: 35%;
+  color: red;
 }
 
-.grid > p {
-  display: inline-block;
+.grid > div > p {
+  /* display: inline-block; */
+  text-align: center;
+  width: 100%;
+  font-size: 60px;
 }
 
 .top {
