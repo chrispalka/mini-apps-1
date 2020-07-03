@@ -1,5 +1,8 @@
 var turnLog = {};
 var turnArray = [];
+var xWins = 0;
+var oWins = 0;
+var winner = '';
 var solutionArray = [
   [
     'square1',
@@ -64,16 +67,15 @@ var clicker = function (section) {
     alert('choose another spot!')
   }
   solutionChecker();
-  console.log(turnLog)
-  // section.setAttribute('id', `${section.getAttribute('id')} inactive`);
-  // // section.innerHTML = `<img src=${'./assets/o-transparent.png'} width='12%' height='25%'></img>`
 };
 
 
 function solutionChecker() {
   var solutionCompiler = [];
-  var winnerBox = document.getElementById('winner-box');
+  var winnerText = document.getElementById('winner-text');
   var newGameButton = document.getElementById('new-game-button');
+  var oScoreBox = document.getElementById('o-score-box');
+  var xScoreBox = document.getElementById('x-score-box');
     for (var i = 0; i < solutionArray.length; i++) {
       var solutions = solutionArray[i];
       for (var s = 0; s < solutions.length; s++) {
@@ -83,16 +85,25 @@ function solutionChecker() {
     var sliced = solutionSlicer(solutionCompiler)
     for (var x = 0; x < sliced.length; x++) {
       if (sliced[x].join('') === 'XXX') {
-        winnerBox.innerHTML = `<h1>Player X Wins!</h1>`;
+        winnerText.innerHTML = `<h1>Player X Wins!</h1>`;
         newGameButton.style.display = 'inline'
+        xWins++;
+        console.log('xWins: ', xWins)
+        xScoreBox.innerHTML = `X: ${xWins}`;
+        winner = 'X';
         return;
       } else if (sliced[x].join('') === 'OOO') {
-        winnerBox.innerHTML = `<h1>Player O Wins!</h1>`;
+        winnerText.innerHTML = `<h1>Player O Wins!</h1>`;
+        newGameButton.style.display = 'inline'
+        oWins++;
+        console.log('oWins: ', oWins)
+        oScoreBox.innerHTML = `O: ${oWins}`;
+        winner = 'O';
         return;
       }
     }
     if (!solutionCompiler.includes(undefined)) {
-      winnerBox.innerHTML = `<h1>Tie!</h1>`;
+      winnerText.innerHTML = `<h1>Tie!</h1>`;
     }
 }
 
@@ -114,6 +125,6 @@ function clearGame() {
   });
   turnLog = {}
   turnArray = [];
-  document.getElementById('winner-box').innerHTML = ''
+  document.getElementById('winner-text').innerHTML = ''
   document.getElementById('new-game-button').style.display = 'none';
 }

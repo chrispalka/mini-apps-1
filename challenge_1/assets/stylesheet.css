@@ -2,39 +2,56 @@ body {
   background: gray;
   font-family: sans-serif;
 }
+
 .container {
   text-align: center;
-  top: 40px; /* Header Height */
+  top: 40px;
   bottom: 20px;
   position: absolute;
   width: 100%;
   background-image: url('./paper-background.png');
   background-size: cover;
-
-  /* background-repeat: no-repeat; */
-}
-
-.score {
-  margin-top: 5%;
-}
-
-.score button {
-  display: none;
-
 }
 
 .winner {
+  /* display: inline-block; */
   margin-top: 15%;
 }
-.winner > h1 {
+.winner > h2 {
   margin-bottom: 0%;
   color: red;
 }
 
-.grid {
-  text-align: center;
+.score {
+  display: inline-block;
+}
+
+.x-score {
+  float: left;
+  padding-right: 50px;
+  font-size: 50px;
+  color: red;
+}
+
+.o-score {
+  float: right;
+  font-size: 50px;
+  color: red;
+  /* margin-left: 50%; */
+}
+
+
+.new-game {
   margin-top: 5%;
-  display: grid;
+}
+
+.new-game button {
+  display: none;
+}
+
+
+.grid {
+  margin-top: 5%;
   grid-template-columns: auto auto auto;
   display: inline-grid;
   width: 35%;

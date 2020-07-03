@@ -9,7 +9,14 @@
 <body>
   <!--build 3 x 3 grid-->
   <div class='container'>
-    <div id='winner-box' class='winner'></div>
+    <div id='winner-box' class='winner'>
+      <h2 id='winner-text'></h2>
+      <div class='score'>
+        <div id='x-score-box' class='x-score'>X: 0</div>
+        <div id='o-score-box' class='o-score'>O: 0</div>
+      </div>
+    </div>
+
     <div id='board' class='grid'>
       <div id='square1' class='top top-left' onclick='clicker(this)'></div>
       <div id='square2' class='top top-mid' onclick='clicker(this)'></div>
@@ -21,9 +28,10 @@
       <div id='square8' class='bot bot-mid' onclick='clicker(this)'></div>
       <div id='square9' class='bot bot-right' onclick='clicker(this)'></div>
     </div>
-    <div id='scoreboard' class='score'>
+    <div id='new-game-container' class='new-game'>
       <button id='new-game-button' onClick='clearGame()'>New Game?</button>
     </div>
+
   </div>
   <button onClick='clearGame()'>Clear Board</button>
 </body>
