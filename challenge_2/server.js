@@ -25,7 +25,7 @@ app.post('/submit', (req, res, next) => {
   //     res.send(html);
   //   }
   // })
-  res.render('index', { data })
+  res.render('submit', { data })
 });
 
 app.listen(port, () => console.log(`CSV-Report-Tool listening at http://localhost:${port}`));
