@@ -13,14 +13,22 @@
   form {
     margin-bottom: 25px;
   }
+  .submit-button {
+    margin-top: 25px;
+  }
 </style>
 
 <body>
   <h1>CSV-Reporting Tool</h1>
-  <form action="/submit" method="post">
-    <input id="submittext" type="text" name="submittext" placeholder="Paste JSON here">
-    <input type="submit" value="Submit">
+  <form action="/submit" method="post" enctype="multipart/form-data">
+    <label for="report">Choose a file:</label>
+    <input type="file"
+        id="submittext" name="json-report">
+        <div class="submit-button">
+          <input type="submit" value="Submit">
+        </div>
   </form>
 </body>
 </html>
+
 
