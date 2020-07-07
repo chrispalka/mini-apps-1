@@ -1,23 +1,31 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const port = 3000;
 const path = require('path');
-const csvParser = require('./model/csvParse')
+const csvParser = require('./model/csvParse');
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
+
+app.set('views', `${__dirname}/views`);
+app.set('view engine', 'ejs');
 
 
-app.get('/', (req, res) =>
-  res.sendFile(path.join(__dirname, './client/index.html'))
-)
+app.get('/', (req, res) => {
+  res.render('index')
+})
 
 app.post('/submit', (req, res, next) => {
-  // console.log('REQUEST', req.body.submittext)
-  var data = JSON.parse(req.body.submittext)
+  var data = JSON.parse(req.body.submittext);
   // res.write(data, 'HI')
   data = csvParser(data);
-  res.send(data)
+  // res.render('index', { data: data }, function (err, html) {
+  //   if (err) {
+  //     console.log('ERROR! ', err)
+  //   } else {
+  //     res.send(html);
+  //   }
+  // })
+  res.render('index', { data })
 });
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+app.listen(port, () => console.log(`CSV-Report-Tool listening at http://localhost:${port}`));

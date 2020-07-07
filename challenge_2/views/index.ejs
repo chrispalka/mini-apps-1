@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -10,6 +10,9 @@
   p {
     margin-top: 0em;
   }
+  form {
+    margin-bottom: 25px;
+  }
 </style>
 
 <body>
@@ -18,8 +21,10 @@
     <input id="submittext" type="text" name="submittext" placeholder="Paste JSON here">
     <input type="submit" value="Submit">
   </form>
-  <div id="result-box"></div>
+  <div id="result-box">
+      <%- data %>
+  </div>
 </body>
 
 </html>
- -->
+
