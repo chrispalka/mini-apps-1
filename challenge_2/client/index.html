@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -14,12 +14,16 @@
 
 <body>
   <h1>CSV-Reporting Tool</h1>
-  <form action="/submit" method="post">
-    <input id="submittext" type="text" name="submittext" placeholder="Paste JSON here">
-    <input type="submit" value="Submit">
+  <form>
+    <label for="report">Choose a file:</label>
+    <input type="file" id="file">
+        <div class="submit-button">
+          <input type="submit" value="Submit">
+        </div>
   </form>
   <div id="result-box"></div>
 </body>
-
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="./app.js"></script>
 </html>
- -->
+
