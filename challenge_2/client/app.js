@@ -9,14 +9,15 @@ const fileUpload = (file) => {
     type: 'POST',
     data: formData,
     url: `${server}/submit`,
-    cache: false,
     contentType: false,
     processData: false,
     success: () => {
       console.log('Success!')
-      // window.location = window.location.href;
     }
-  });
+  }).done(function(res) {
+    console.log(res)
+    $('#result-box').append(res.data);
+  })
 };
 
 $('form').on('submit', function(e) {

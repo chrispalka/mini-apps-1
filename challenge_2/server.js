@@ -26,30 +26,27 @@ app.post('/submit', (req, res, next) => {
     data = Buffer.concat([data, chunk]);
   })
   req.on('end', () => {
-    // data = data.toString('utf8');
+    data = data.toString().split('\n').slice(4, -3)
+    data.push('}')
+    data = data.join('\n')
+    data = JSON.parse(data);
+    data = csvParser(data)
     fs.writeFile(path.join(__dirname, `/uploads/${_.uniqueId('json_')}.csv`), data, function(err) {
       if (err) {
+        res.status(400);
         console.log('Error! ', err);
       } else {
         console.log('File written successfully');
       }
     });
     res.set(headers)
-    // var final = Buffer.from(data, 'base64').toString('utf8');
-    // console.log(final)
-    res.render('submit', { data });
-  });
-  // console.log('data: ', file)
-  // data = csvParser(data)
-  // res.render('submit', { data });
-
-  // var data = JSON.parse(req.file);
-
-    // data = csvParser(data);
-    // console.log(data)
+    // res.json(data)
+    res.status(200).json({ data })
     // res.render('submit', { data })
 
+  });
 
+// next();
 });
 
 app.listen(port, () => console.log(`CSV-Report-Tool listening at http://localhost:${port}`));
