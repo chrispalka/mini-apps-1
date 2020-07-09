@@ -14,12 +14,16 @@
 
 <body>
   <h1>CSV-Reporting Tool</h1>
-  <form>
+  <form class='form-report'>
     <label for="report">Choose a file:</label>
     <input type="file" id="file">
         <div class="submit-button">
           <input type="submit" value="Submit">
         </div>
+  </form>
+  <form action="/download" method="get">
+    <label for="download">Download Latest:</label>
+      <input type="submit" value="Download">
   </form>
   <div id="result-box"></div>
 </body>

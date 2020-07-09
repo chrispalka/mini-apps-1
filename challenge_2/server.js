@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.post('/submit', (req, res, next) => {
+app.post('/submit', (req, res) => {
   var data = Buffer.alloc(0);
 
   req.on('data', (chunk) => {
@@ -40,13 +40,27 @@ app.post('/submit', (req, res, next) => {
       }
     });
     res.set(headers)
-    // res.json(data)
     res.status(200).json({ data })
-    // res.render('submit', { data })
 
   });
+});
 
-// next();
+app.get('/download', (req, res) => {
+  fs.readdir(path.join(__dirname, '/uploads'), function(err, data) {
+    if (err) {
+      console.log('Error! ', err);
+    } else {
+      console.log('Files Found! ', data);
+      var latestFile = data.pop();
+      res.sendFile(path.join(__dirname, `/uploads/${latestFile}`), function(err) {
+        if (err) {
+          console.log('Error! ', err);
+        } else {
+          console.log('File sent: ', latestFile)
+        }
+      });
+    }
+  });
 });
 
 app.listen(port, () => console.log(`CSV-Report-Tool listening at http://localhost:${port}`));

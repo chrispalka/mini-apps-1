@@ -15,14 +15,15 @@ const fileUpload = (file) => {
       console.log('Success!')
     }
   }).done(function(res) {
-    console.log(res)
+    $('#result-box').html('')
     $('#result-box').append(res.data);
   })
 };
 
-$('form').on('submit', function(e) {
+$('.form-report').on('submit', function(e) {
   e.preventDefault()
   var form = $('form #file')[0];
   var file = form.files[0]
   fileUpload(file)
 });
+
