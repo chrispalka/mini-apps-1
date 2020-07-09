@@ -20,5 +20,5 @@ module.exports = function csvParser(obj) {
   }
   filterColumns(obj)
   rows.splice(0, 0, columns.join(','))
-  return rows.join('<p class="result" style="margin-top: 0px; margin-bottom: 0px">\n</p>')
+  return rows.join('\n')
 }

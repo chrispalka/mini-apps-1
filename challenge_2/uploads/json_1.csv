@@ -1,6 +1,6 @@
-firstName,lastName,county,city,role,sales<p class="result" style="margin-top: 0px; margin-bottom: 0px">
-</p>Joshie,Wyattson,San Mateo,San Mateo,Broker,1000000<p class="result" style="margin-top: 0px; margin-bottom: 0px">
-</p>Beth Jr.,Johnson,San Mateo,Pacifica,Manager,2900000<p class="result" style="margin-top: 0px; margin-bottom: 0px">
-</p>Smitty,Won,San Mateo,Redwood City,Sales Person,4800000<p class="result" style="margin-top: 0px; margin-bottom: 0px">
-</p>Allen,Price,San Mateo,Burlingame,Sales Person,2500000<p class="result" style="margin-top: 0px; margin-bottom: 0px">
-</p>Beth,Johnson,San Francisco,San Francisco,Broker/Sales Person,7500000
+firstName,lastName,county,city,role,sales
+Joshie,Wyattson,San Mateo,San Mateo,Broker,1000000
+Beth Jr.,Johnson,San Mateo,Pacifica,Manager,2900000
+Smitty,Won,San Mateo,Redwood City,Sales Person,4800000
+Allen,Price,San Mateo,Burlingame,Sales Person,2500000
+Beth,Johnson,San Francisco,San Francisco,Broker/Sales Person,7500000

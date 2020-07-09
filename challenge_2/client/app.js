@@ -16,7 +16,10 @@ const fileUpload = (file) => {
     }
   }).done(function(res) {
     $('#result-box').html('')
-    $('#result-box').append(res.data);
+    var data = res.data.split('\n');
+    data.forEach(function(row) {
+      $('#result-box').append(`<p class="result" style="margin-top: 0px; margin-bottom: 0px">${row}</p>`);
+    })
   })
 };
 
