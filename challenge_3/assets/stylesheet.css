@@ -1,4 +1,11 @@
-body {
-  font-weight: 100;
-  font-style: italic;
+.container {
+  text-align: center;
+}
+.btn-checkout {
+  margin-top: 50%;
+  margin-bottom: 50%;
+}
+.stage-one-form {
+  margin-top: 50%;
+  margin-bottom: 50%;
 }

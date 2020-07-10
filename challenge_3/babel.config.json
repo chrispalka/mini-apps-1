@@ -1,9 +1,5 @@
 {
 "presets": ["@babel/preset-env"],
 "overrides": [
-  {
-    "exclude": /node_modules/',
-    "plugins": ["babel-plugin-lodash"]
-  }
 ]
 }
