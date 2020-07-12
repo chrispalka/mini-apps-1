@@ -25,6 +25,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/submit', upload.none(), (req, res) => {
+  console.log(req.body)
   var username = req.body.username;
   var email = req.body.email;
   var password = req.body.password;
@@ -38,7 +39,7 @@ app.post('/submit', upload.none(), (req, res) => {
   var expiry = req.body.expiry;
   var ccv = req.body.ccv;
   var billingzip = req.body.billingzip;
-  if (username !== undefined) {
+  // if (username !== undefined) {
     var query = `INSERT INTO users (username,
       email, password, addressone, addresstwo,
       city, state, zip, phone, ccnum, expiry,
@@ -46,13 +47,13 @@ app.post('/submit', upload.none(), (req, res) => {
       '', '', '', '', '', '',
       '', '', '', '')`;
       insertRow(query)
-  } else if (addressone !== undefined) {
-    var query = `UPDATE users SET addressone = '${addressone}', addresstwo = '${addresstwo}', city = '${city}', state = '${state}', zip = '${zip}', phone = '${phone}' WHERE LAST_INSERT_ID();`
-    insertRow(query)
-  } else {
-    var query = `UPDATE users SET ccnum = '${ccnum}', expiry = '${expiry}', ccv = '${ccv}', billingzip = '${billingzip}' WHERE LAST_INSERT_ID();`
-    insertRow(query)
-  }
+  // } else if (addressone !== undefined) {
+    // var query = `UPDATE users SET addressone = '${addressone}', addresstwo = '${addresstwo}', city = '${city}', state = '${state}', zip = '${zip}', phone = '${phone}' WHERE LAST_INSERT_ID();`
+    // insertRow(query)
+  // } else {
+    // var query = `UPDATE users SET ccnum = '${ccnum}', expiry = '${expiry}', ccv = '${ccv}', billingzip = '${billingzip}' WHERE LAST_INSERT_ID();`
+    // insertRow(query)
+  // }
 
   // var data = new Buffer.alloc(0);
   // console.log('Success submission!! ', req)
