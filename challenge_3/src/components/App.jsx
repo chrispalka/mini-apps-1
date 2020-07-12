@@ -1,4 +1,6 @@
 import StageOne from './StageOne.js'
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -27,7 +29,7 @@ class App extends React.Component {
     } else {
       return (
         <div className="container">
-          <StageOne name={'Chris'} />
+          <StageOne />
         </div>
       )
     }

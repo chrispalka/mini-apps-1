@@ -1,0 +1,2 @@
+const db = require('../db');
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL21vZGVscy9tb2RlbC5qcyJdLCJuYW1lcyI6WyJkYiIsInJlcXVpcmUiXSwibWFwcGluZ3MiOiJBQUFBLE1BQU1BLEtBQUtDLFFBQVEsT0FBUixDQUFYIiwiZmlsZSI6Im1vZGVsLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgZGIgPSByZXF1aXJlKCcuLi9kYicpXG4iXX0=
