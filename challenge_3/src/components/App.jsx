@@ -1,4 +1,5 @@
-import StageOne from './StageOne.js'
+
+import Form from './Form.js'
 
 
 class App extends React.Component {
@@ -29,7 +30,7 @@ class App extends React.Component {
     } else {
       return (
         <div className="container">
-          <StageOne />
+          <Form />
         </div>
       )
     }
