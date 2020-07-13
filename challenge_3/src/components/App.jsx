@@ -1,6 +1,4 @@
-
 import Form from './Form.js'
-
 
 class App extends React.Component {
   constructor(props) {
@@ -22,7 +20,7 @@ class App extends React.Component {
     if (!this.state.checkoutInProgress) {
       return (
         <div className="container">
-          <button type="submit" className="btn btn-checkout btn-primary" onClick={this.renderStageOne}>
+          <button type="button" className="btn btn-checkout btn-primary" onClick={this.renderStageOne}>
             Proceed to checkout
           </button>
         </div>
